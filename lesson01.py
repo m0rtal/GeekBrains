@@ -21,7 +21,7 @@ print("Оно же в чч:мм:сс: %02d:%02d:%02d" % (hours, minutes, seconds
 
 # Задание 3
 n = int(input("Введите n, будет фокус: "))
-print("n + nn + nnn = %d" % (n + (n * 10 + n) + (n * 100 + n * 10 + n)))
+print("n + nn + nnn = %d" % (n + (n * 11) + (n * 111)))
 
 # Задание 4
 number = input("Введите целое положительно число: ")
