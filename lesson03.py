@@ -51,7 +51,8 @@ while not quit:
         summ += sum([int(number) for number in numbers])
         print(f"Сумма введённых чисел: {summ}")
     else:
-        user_input = user_input.replace(stop, "")
+        split_idx = user_input.index(stop)
+        user_input = user_input[:split_idx]
         numbers = user_input.split()
         summ += sum([int(number) for number in numbers])
         print(f"Сумма введённых чисел: {summ}")
