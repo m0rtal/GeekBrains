@@ -1,43 +1,44 @@
 from my_functions import get_digit_from_user
 
 
-# # Задание 01
-# def divide(x, y):
-#     return x / y if y != 0 else print("Деление на 0 не возможно!")
-#
-#
-# print(divide(get_digit_from_user(), get_digit_from_user()))
-#
-#
-# # Задание 02
-# def get_user_info(name, surname, year, city, email, phone):
-#     return f"{name} {surname}, {year}, living in {city} city, email {email}, phone {phone}"
-#
-#
-# print(get_user_info("Peter", "Jacobson", 1900, "Default", "no@bo.dy", "+1234567890"))
+# Задание 01
+def divide(x, y):
+    return x / y if y != 0 else print("Деление на 0 не возможно!")
+
+
+print(divide(get_digit_from_user(), get_digit_from_user()))
+
+
+# Задание 02
+def get_user_info(name, surname, year, city, email, phone):
+    return f"{name} {surname}, {year}, living in {city} city, email {email}, phone {phone}"
+
+
+print(get_user_info("Peter", "Jacobson", 1900, "Default", "no@bo.dy", "+1234567890"))
+
 
 # Задание 03
-# def greatest_sum(a, b, c):
-#     values = [a, b, c]
-#     values.remove(min(values))
-#     return sum(values)
-#
-#
-# print(greatest_sum(1, 2, 3))
+def greatest_sum(a, b, c):
+    values = [a, b, c]
+    values.remove(min(values))
+    return sum(values)
 
 
-# # Задание 04
-# def my_func(x, y):
-#     y = int(y)
-#     result = 1
-#     for _ in range(abs(y)):
-#         result /= x
-#     return result
-#
-#
-# x = get_digit_from_user("Введите х: ")
-# y = get_digit_from_user("Введите y: ")
-# print(my_func(x, y))
+print(greatest_sum(1, 2, 3))
+
+
+# Задание 04
+def my_func(x, y):
+    y = int(y)
+    result = 1
+    for _ in range(abs(y)):
+        result /= x
+    return result
+
+
+x = get_digit_from_user("Введите х: ")
+y = get_digit_from_user("Введите y: ")
+print(my_func(x, y))
 
 # Задание 05
 summ = 0
@@ -55,3 +56,18 @@ while not quit:
         summ += sum([int(number) for number in numbers])
         print(f"Сумма введённых чисел: {summ}")
         quit = True
+
+
+# Задание 06
+def int_func(word):
+    return word.capitalize()
+
+
+print(int_func("test"))
+
+
+def int_func2(sentence):
+    return " ".join([int_func(word) for word in sentence.split()])
+
+
+print(int_func2("test test test"))
