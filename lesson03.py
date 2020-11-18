@@ -14,7 +14,7 @@ def get_user_info(name, surname, year, city, email, phone):
     return f"{name} {surname}, {year}, living in {city} city, email {email}, phone {phone}"
 
 
-print(get_user_info("Peter", "Jacobson", 1900, "Default", "no@bo.dy", "+1234567890"))
+print(get_user_info(name="Peter", surname="Jacobson", year=1900, city="Default", email="no@bo.dy", phone="+1234567890"))
 
 
 # Задание 03
