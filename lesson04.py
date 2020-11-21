@@ -29,42 +29,38 @@ result_list = [element for element in source_list if source_list.count(element) 
 print(result_list)
 
 # Задание 05
-new_list = [number for number in range(100, 1001) if number % 2 == 0]
-
-
-def func(el1, el2):
-    return el1 * el2
-
-
-print(reduce(func, new_list))
+new_list = [number for number in range(100, 1001, 2)]
+print(reduce(lambda el1, el2: el1 * el2, new_list))
 
 # Задание 06
 def int_iterator(number):
-    for el in count(number):
-        if el > 10:
+    for element in count(number):
+        if element > 10:
             break
         else:
-            print(el)
+            print(element)
 
 def list_iterator(lst):
-    с = 0
+    count = 0
     for el in cycle(lst):
-        if с > 10:
+        if count > 10:
             break
         print(el)
-        с += 1
+        count += 1
 
 int_iterator(3)
-list_iterator("test")
+list_iterator(["test1", "test2", "test3"])
 
 # Задание 07
-def fact(n):
-    numbers = range(1, n + 1)
-    mult = 1
-    for idx, number in enumerate(numbers):
-        mult *= number
-        yield idx+1, mult
+def fact(number):
+    """Считает факториал от 1 до полученного числа number и возвращает полученные значения"""
+    if number > 0:
+        mult = 1
+        for number in range(1, number + 1):
+            mult *= number
+            yield mult
+    else:
+        print("Функция принимает только целые положительные числа")
 
-
-for idx, el in fact(5):
-    print(f"Шаг {idx} - произведение равно {el}")
+for el in fact(-1):
+    print(el)
