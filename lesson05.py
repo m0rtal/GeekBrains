@@ -81,30 +81,28 @@ def randomletters():
 #
 # print(f"Сумма чисел в файле {filename}: {fsum([float(number) for number in text.split()]):.0f}")
 #
-# Задание 06
-import re
-
-with open("schedule.txt", "r", encoding="utf-8") as fhr:
-    raw_text = fhr.readlines()
-
-schedule = {}
-for line in raw_text:
-    words = line.split()
-    course = words[0][:-1]
-    nums = map(int, [re.sub(r"\((.*?)\)", "", num).replace("-", "") for num in words[1:]])
-    print(nums)
-
-# не пригодилось, но жалко выбрасывать
-# records = set(v for key, value in loaded_json.items() for v in value)
-
-# summary = {key: sum(loaded_json[key].values()) for key, value in loaded_json.items()}
-# for key, value in summary.items():
+# # Задание 06
+# import re
+#
+# with open("schedule.txt", "r", encoding="utf-8") as fhr:
+#     raw_text = fhr.readlines()
+#
+# schedule = {}
+# for line in raw_text:
+#     words = line.split()
+#     course = words[0][:-1]
+#     nums = [re.sub(r"\((.*?)\)", "", word).replace("-", "") for word in words[1:]]
+#     summ = sum(int(num) if num else 0 for num in nums)
+#     schedule.update({course: summ})
+#
+# # не пригодилось, но жалко выбрасывать
+# # records = set(v for key, value in loaded_json.items() for v in value)
+# # summary = {key: sum(loaded_json[key].values()) for key, value in loaded_json.items()}
+#
+# for key, value in schedule.items():
 #     print(f"Общее количество занятий по предмету '{key}': {value}")
 
 # # Задание 07
-# ownership = ("ООО", "ИП", "КФХ", "АО", "ЗАО", "ОАО", "ОДО")
-#
-#
-#
-# firms = [[randomletters(), choice(ownership), randint(5000, 20000), randint(5000, 1000)] for _ in range(100)]
-# print(firms)
+ownership = ("ООО", "ИП", "КФХ", "АО", "ЗАО", "ОАО", "ОДО")
+firms = [[randomletters(), choice(ownership), randint(5000, 20000), randint(5000, 10000)] for _ in range(100)]
+
