@@ -13,7 +13,7 @@
 # print(f"В считанном файле {filename} было строк: {len(text)}, слов: {sum([len(line.split()) for line in text])}")
 #
 # # Задание 03
-## import string
+
 from random import choice, randint, random
 
 
@@ -82,6 +82,7 @@ def randomletters():
 # print(f"Сумма чисел в файле {filename}: {fsum([float(number) for number in text.split()]):.0f}")
 #
 # # Задание 06
+# from string import punctuation
 # import re
 #
 # with open("schedule.txt", "r", encoding="utf-8") as fhr:
@@ -89,9 +90,11 @@ def randomletters():
 #
 # schedule = {}
 # for line in raw_text:
+#     line = line.translate(str.maketrans("", "", punctuation))
 #     words = line.split()
-#     course = words[0][:-1]
-#     nums = [re.sub(r"\((.*?)\)", "", word).replace("-", "") for word in words[1:]]
+#     course = words[0]
+#     # nums = [''.join(filter(str.isdigit, word)) for word in words[1:]]
+#     nums = re.findall(r'\d+', line)
 #     summ = sum(int(num) if num else 0 for num in nums)
 #     schedule.update({course: summ})
 #
@@ -100,9 +103,16 @@ def randomletters():
 # # summary = {key: sum(loaded_json[key].values()) for key, value in loaded_json.items()}
 #
 # for key, value in schedule.items():
-#     print(f"Общее количество занятий по предмету '{key}': {value}")
-
-# # Задание 07
+#     print(f"Общее количество часов по предмету '{key}': {value}")
+#
+# Задание 07
 ownership = ("ООО", "ИП", "КФХ", "АО", "ЗАО", "ОАО", "ОДО")
-firms = [[randomletters(), choice(ownership), randint(5000, 20000), randint(5000, 10000)] for _ in range(100)]
+firms = "\n".join(
+    [" ".join([randomletters(), choice(ownership), str(randint(5000, 20000)), str(randint(5000, 10000))]) for _ in
+     range(100)])
 
+filename = "firms.txt"
+with open(filename, "w", encoding="utf-8") as fhw:
+    fhw.writelines(firms)
+
+with open(filename, "r") as fhr:
