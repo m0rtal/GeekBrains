@@ -15,6 +15,7 @@
 # # Задание 03
 # import string
 # from random import choice, randint, random
+# from math import fsum
 #
 #
 # def randomletters():
@@ -43,7 +44,6 @@
 # poverty = [line.split()[0] for line in salary if float(line.split()[1]) < 20000]
 # print("Сотрудники, которым срочно нужно поднять зарплату:\n", "\n".join(poverty), sep="")
 #
-# from math import fsum
 #
 # total_salary = fsum([float(line.split()[1]) for line in salary])
 # poverty_salaries_list = [float(line.split()[1]) for line in salary if float(line.split()[1]) < 20000]
@@ -65,3 +65,17 @@
 #     words = " ".join(words) + "\n"
 #     with open("четыре.txt", "a") as fha:
 #         fha.write(words)
+#
+# # Задание 05
+# filename = "numbers.txt"
+# numbers = " ".join([str(randint(0, 9)) for _ in range(1000)])
+# with open(filename, "a") as fha:
+#     fha.write(numbers)
+#
+# with open(filename, "r") as fhr:
+#     text = fhr.read()
+#
+# print(f"Сумма чисел в файле {filename}: {fsum([float(number) for number in text.split()]):.0f}")
+#
+# Задание 06
+
