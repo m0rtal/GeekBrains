@@ -101,6 +101,8 @@ for key, value in schedule.items():
     print(f"Общее количество часов по предмету '{key}': {value}")
 
 # Задание 07
+import json
+
 ownership = ("ООО", "ИП", "КФХ", "АО", "ЗАО", "ОАО", "ОДО")
 firms = "\n".join(
     [" ".join([randomletters(), choice(ownership), str(randint(5000, 20000)), str(randint(5000, 10000))]) for _ in
@@ -127,3 +129,6 @@ firms_sorted = dict(sorted(firms_dict.items(), key=lambda item: item[1]))
 firms = [firms_sorted, {"average_profit": avg_profit}]
 print("Подробно о прибылях компаний, сортировка от меньшего к большему:")
 print(firms)
+
+with open("firs.json", "w", encoding="utf-8") as fhw:
+    json.dump(firms, fhw)
