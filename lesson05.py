@@ -41,16 +41,13 @@ for _ in range(100):
         fha.write(f"{randomletters()} {randomsalary()}\n")
 
 with open(filename, "r", encoding="utf-8") as fhr:
-    salary = fhr.readlines()
+    salaries = {row.split()[0]: float(row.split()[1]) for row in fhr.readlines()}
 
-poverty = [line.split()[0] for line in salary if float(line.split()[1]) < 20000]
-print("Сотрудники, которым срочно нужно поднять зарплату:\n", "\n".join(poverty), sep="")
+poverty = {name: salary for name, salary in salaries.items() if salary < 20000}
+print("Сотрудники, которым срочно нужно поднять зарплату:", "\n".join(poverty), sep="\n")
 
-total_salary = fsum([float(line.split()[1]) for line in salary])
-poverty_salaries_list = [float(line.split()[1]) for line in salary if float(line.split()[1]) < 20000]
-poverty_salary = fsum(poverty_salaries_list)
-print(f"Средняя зарплата персонала: {(total_salary / len(salary)):.2f}")
-print(f"Средняя зарплата нуждающегося персонала: {(poverty_salary / len(poverty_salaries_list)):.2f}")
+print(f"Средняя зарплата персонала: {(sum(salaries.values()) / len(salaries)):.2f}")
+print(f"Средняя зарплата нуждающегося персонала: {(sum(poverty.values()) / len(poverty)):.2f}")
 
 # Задание 04
 from translate import Translator
