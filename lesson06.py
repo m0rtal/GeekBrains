@@ -36,3 +36,30 @@
 #
 #
 # Задача 03
+class Worker:
+    def __init__(self, name, surname, position, wage, bonus):
+        self.name = name
+        self.surname = surname
+        self.position = position
+        self._income = {"wage": wage, "bonus": bonus}
+
+    @property
+    def income(self):
+        return self._income
+
+
+class Position(Worker):
+    def get_full_name(self):
+        return f"{self.name} {self.surname}"
+
+    def get_total_income(self):
+        return sum(self._income.values())
+
+
+employee1 = Position("Иван", "Иванов", "принеси", 10000, 5000)
+print(employee1.name)
+print(employee1.surname)
+print(employee1.position)
+print(employee1.income)
+print(employee1.get_full_name())
+print(employee1.get_total_income())
