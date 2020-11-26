@@ -90,7 +90,7 @@ for line in raw_text:
     # nums = [''.join(filter(str.isdigit, word)) for word in words[1:]]
     nums = re.findall(r'\d+', line)
     summ = sum(int(num) if num else 0 for num in nums)
-    schedule.update({course: summ})
+    schedule[course] = summ
 
 # не пригодилось, но жалко выбрасывать
 # records = set(v for key, value in loaded_json.items() for v in value)
