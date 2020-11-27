@@ -2,6 +2,8 @@
 from itertools import cycle
 from time import sleep
 
+NORMALIZE_TEXT = "\033[0m"
+
 
 class TrafficLight:
     __color = [["красный", [7, 31]], ["жёлтый", [2, 33]], ["зелёный", [5, 32]], ["жёлтый", [2, 33]]]
@@ -15,6 +17,7 @@ class TrafficLight:
             sleep(light[1][0])
 
             count += 1
+        print(NORMALIZE_TEXT)
 
 
 tl = TrafficLight()
@@ -65,10 +68,8 @@ print(employee1.income)
 print(employee1.get_full_name())
 print(employee1.get_total_income())
 
+
 # Задача 04
-NORMALIZE_TEXT = "\033[0m"
-
-
 class Car:
     def __init__(self, color, name, speed=0):
         self.speed = speed
