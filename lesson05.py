@@ -1,7 +1,7 @@
 # Задание 01
 filename = "text.txt"
 text = input("Введите текст для сохранения: ")
-while text != "":
+while text:
     with open(filename, "a", encoding="utf-8") as fha:
         fha.write(text + "\n")
     text = input("Введите текст для сохранения: ")
@@ -25,9 +25,6 @@ def randomletters():
     letters = "".join([chr(i) for i in range(ord('а'), ord('а') + 32)])
     length = randint(5, 15)
     return "".join(choice(letters) for _ in range(length)).capitalize()
-
-
-
 
 def randomsalary():
     """Генерирует случайное float число в диапазоне от ~1.000 до ~200.000"""
@@ -73,7 +70,7 @@ with open(filename, "a", encoding="utf-8") as fha:
 with open(filename, "r", encoding="utf-8") as fhr:
     text = fhr.read()
 
-print(f"Сумма чисел в файле {filename}: {fsum([float(number) for number in text.split()]):.0f}")
+print(f"Сумма чисел в файле {filename}: {sum(map(int, text.split())):.0f}")
 
 # Задание 06
 from string import punctuation
@@ -114,7 +111,7 @@ with open(filename, "w", encoding="utf-8") as fhw:
 with open(filename, "r", encoding="utf-8") as fhr:
     report = {row.split()[0]: (int(row.split()[2]) - int(row.split()[3])) for row in fhr.readlines()}
 
-avg_profit = sum(report.values())/len(report.values())
+avg_profit = sum(report.values()) / len(report.values())
 print(f"Средняя прибыль без учёта убыточных компаний: {avg_profit}")
 
 new_report = [report, {"average_profit": avg_profit}]
