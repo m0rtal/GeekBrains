@@ -65,12 +65,96 @@
 # print(employee1.get_full_name())
 # print(employee1.get_total_income())
 #
-# Задача 04
-class Car:
-    def __init__(self, speed, color, name, is_police):
-        self.speed = speed
-        self.color = color
-        self.name = name
-        self.is_police = is_police
-
-
+# # Задача 04
+# NORMALIZE_TEXT = "\033[0m"
+#
+#
+# class Car:
+#     def __init__(self, color, name, speed=0):
+#         self.speed = speed
+#         self._color = color
+#         self.name = name
+#         self._is_police = False
+#
+#     def is_police(self):
+#         if self._is_police:
+#             return "Это полицейская машина"
+#         else:
+#             return "Это гражданская машина"
+#
+#     def color(self):
+#         return f"Цвет автомобиля {self.name} - {self._color}"
+#
+#     def go(self):
+#         return NORMALIZE_TEXT + f"Машина {self.name} поехала"
+#
+#     def stop(self):
+#         self.speed = 0
+#         return NORMALIZE_TEXT + f"Машина {self.name} остановилась"
+#
+#     def turn(self, direction):
+#         return NORMALIZE_TEXT + f"Машина {self.name} повернулась в направлении {direction}"
+#
+#     def show_speed(self):
+#         if self.speed > 0:
+#             return NORMALIZE_TEXT + f"Скорость {self.name} - {self.speed}км/ч"
+#         elif self.speed == 0:
+#             return NORMALIZE_TEXT + f"Машина {self.name} стоит на месте"
+#         else:
+#             return NORMALIZE_TEXT + f"У машины что-то не так со скоростью"
+#
+#
+# class TownCar(Car):
+#     def show_speed(self):
+#         if self.speed > 60:
+#             return f"\033[31mСкорость {self.name} - {self.speed}км/ч, машина едет с превышением!"
+#         else:
+#             return super().show_speed()
+#
+#
+# class SportCar(Car):
+#     pass
+#
+#
+# class WorkCar(Car):
+#     def show_speed(self):
+#         if self.speed > 40:
+#             return f"\033[31mСкорость {self.name} - {self.speed}км/ч, машина едет с превышением скорости!"
+#         else:
+#             return super().show_speed()
+#
+#
+# class PoliceCar(Car):
+#     def __init__(self, color, name, speed=0):
+#         super().__init__(color, name, speed)
+#         self._is_police = True
+#
+#
+# def show_all(object, direction):
+#     """Проходит по всем атрибутам и методам класса, показывая их работоспособность"""
+#     print("-" * 80)
+#     print(object.color())
+#     print(object.is_police())
+#     print(object.go())
+#     print(object.speed)
+#     print(object.show_speed())
+#     print(object.turn(direction))
+#     print(object.stop())
+#     print(object.show_speed())
+#
+#
+#
+# town_car = TownCar("чёрный", "Prius", 80)
+# show_all(town_car, "налево")
+#
+# sport_car = SportCar("красный", "Lambo", 80)
+# show_all(sport_car, "направо")
+#
+# work_car = WorkCar("жёлтый", "Ларгус", 50)
+# show_all(work_car, "на север")
+#
+# police_car = PoliceCar("чёрно-белый", "Ford Fairlane Crown Victoria", 120)
+# show_all(police_car, "за нарушителем")
+#
+#
+# Задача 05
