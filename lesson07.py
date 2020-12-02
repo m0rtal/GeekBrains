@@ -54,48 +54,41 @@
 # print(matrix2 + matrix3 + matrix4)
 #
 #
-# # Задание 02
-# from abc import ABC, abstractmethod
-#
-#
-# class Clothes(ABC):
-#     def __init__(self, size, name):
-#         self.name = name
-#
-#     @abstractmethod
-#     def cloth_consumption(self):
-#         pass
-#
-#     def _total_cloth(self, cloth1, cloth2):
-#         return cloth1.cloth_consumption + cloth2.cloth_consumption
-#
-#
-# class Coat(Clothes):
-#     def __init__(self, size, name="Пальто"):
-#         super().__init__(size, name)
-#         self._cloth_consumption = round(size / 6.5 + 0.5, 2)
-#
-#     @property
-#     def cloth_consumption(self):
-#         return self._cloth_consumption
-#
-#
-# class Suit(Clothes):
-#     def __init__(self, size, name="Костюм с отливом"):
-#         super().__init__(size, name)
-#         self._cloth_consumption = round(size * 2 + 0.3, 2)
-#
-#     @property
-#     def cloth_consumption(self):
-#         return self._cloth_consumption
-#
-#
-# coat = Coat(42)
-# print(f"Ушло ткани на пальто: {coat.cloth_consumption} ед.")
-#
-# suit = Suit(1.86)
-# print(f"Ушло ткани на костюм: {suit.cloth_consumption} ед.")
-#
-# print(f"Ушло ткани всего: {Clothes._total_cloth(Clothes, coat, suit)} ед.")
+# Задание 02
+from abc import ABC, abstractmethod
+
+
+class Clothes(ABC):
+    def __init__(self, size, name):
+        self.name = name
+        self._cloth_consumption = 0
+
+    @property
+    def cloth_consumption(self):
+        return self._cloth_consumption
+
+    def _total_cloth(self, cloth1, cloth2):
+        return cloth1.cloth_consumption + cloth2.cloth_consumption
+
+
+class Coat(Clothes):
+    def __init__(self, size, name="Пальто"):
+        super().__init__(size, name)
+        self._cloth_consumption = round(size / 6.5 + 0.5, 2)
+
+
+class Suit(Clothes):
+    def __init__(self, size, name="Костюм с отливом"):
+        super().__init__(size, name)
+        self._cloth_consumption = round(size * 2 + 0.3, 2)
+
+
+coat = Coat(42)
+print(f"Ушло ткани на пальто: {coat.cloth_consumption} ед.")
+
+suit = Suit(1.86)
+print(f"Ушло ткани на костюм: {suit.cloth_consumption} ед.")
+
+print(f"Ушло ткани всего: {Clothes._total_cloth(Clothes, coat, suit)} ед.")
 
 # Задание 03
