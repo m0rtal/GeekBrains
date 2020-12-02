@@ -15,6 +15,7 @@
 #             print("Принимает только список списков на вход!")
 #
 #     def __str__(self):
+#         """Переводит матрицу в строку для удобства вывода"""
 #         matrix_string = ""
 #         for row in self.data:
 #             for value in row:
@@ -23,6 +24,7 @@
 #         return matrix_string
 #
 #     def __add__(self, other):
+#         """Складывает две матрицы одинакового размера"""
 #         self.rows = len(self.data)
 #         self.columns = len(self.data[0])
 #         other.rows = len(other.data)
@@ -51,5 +53,49 @@
 # print(matrix2 + matrix3)
 # print(matrix2 + matrix3 + matrix4)
 #
+#
+# # Задание 02
+# from abc import ABC, abstractmethod
+#
+#
+# class Clothes(ABC):
+#     def __init__(self, size, name):
+#         self.name = name
+#
+#     @abstractmethod
+#     def cloth_consumption(self):
+#         pass
+#
+#     def _total_cloth(self, cloth1, cloth2):
+#         return cloth1.cloth_consumption + cloth2.cloth_consumption
+#
+#
+# class Coat(Clothes):
+#     def __init__(self, size, name="Пальто"):
+#         super().__init__(size, name)
+#         self._cloth_consumption = round(size / 6.5 + 0.5, 2)
+#
+#     @property
+#     def cloth_consumption(self):
+#         return self._cloth_consumption
+#
+#
+# class Suit(Clothes):
+#     def __init__(self, size, name="Костюм с отливом"):
+#         super().__init__(size, name)
+#         self._cloth_consumption = round(size * 2 + 0.3, 2)
+#
+#     @property
+#     def cloth_consumption(self):
+#         return self._cloth_consumption
+#
+#
+# coat = Coat(42)
+# print(f"Ушло ткани на пальто: {coat.cloth_consumption} ед.")
+#
+# suit = Suit(1.86)
+# print(f"Ушло ткани на костюм: {suit.cloth_consumption} ед.")
+#
+# print(f"Ушло ткани всего: {Clothes._total_cloth(Clothes, coat, suit)} ед.")
 
-# Задание 02
+# Задание 03
