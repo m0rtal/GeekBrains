@@ -59,7 +59,7 @@ from abc import ABC, abstractmethod
 
 
 class Clothes(ABC):
-    def __init__(self, size, name):
+    def __init__(self, name):
         self.name = name
         self._cloth_consumption = 0
 
@@ -67,28 +67,28 @@ class Clothes(ABC):
     def cloth_consumption(self):
         return self._cloth_consumption
 
-    def _total_cloth(self, cloth1, cloth2):
-        return cloth1.cloth_consumption + cloth2.cloth_consumption
-
+    @abstractmethod
+    def calculate_cloth(self, size):
+        pass
 
 class Coat(Clothes):
-    def __init__(self, size, name="Пальто"):
-        super().__init__(size, name)
+    def calculate_cloth(self, size):
         self._cloth_consumption = round(size / 6.5 + 0.5, 2)
 
 
 class Suit(Clothes):
-    def __init__(self, size, name="Костюм с отливом"):
-        super().__init__(size, name)
+    def calculate_cloth(self, size):
         self._cloth_consumption = round(size * 2 + 0.3, 2)
 
 
-coat = Coat(42)
+coat = Coat("Пальто")
+coat.calculate_cloth(42)
 print(f"Ушло ткани на пальто: {coat.cloth_consumption} ед.")
 
-suit = Suit(1.86)
+suit = Suit("Костюм с отливом")
+suit.calculate_cloth(1.86)
 print(f"Ушло ткани на костюм: {suit.cloth_consumption} ед.")
 
-print(f"Ушло ткани всего: {Clothes._total_cloth(Clothes, coat, suit)} ед.")
+print(f"Ушло ткани всего: {coat.cloth_consumption + suit.cloth_consumption} ед.")
 
 # Задание 03
