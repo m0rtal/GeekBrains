@@ -53,7 +53,6 @@ print(matrix1 + matrix2)
 print(matrix2 + matrix3)
 print(matrix2 + matrix3 + matrix4)
 
-
 # Задание 02
 from abc import ABC, abstractmethod
 
@@ -70,6 +69,7 @@ class Clothes(ABC):
     @abstractmethod
     def calculate_cloth(self, size):
         pass
+
 
 class Coat(Clothes):
     def calculate_cloth(self, size):
@@ -90,6 +90,7 @@ suit.calculate_cloth(1.86)
 print(f"Ушло ткани на костюм: {suit.cloth_consumption} ед.")
 
 print(f"Ушло ткани всего: {coat.cloth_consumption + suit.cloth_consumption} ед.")
+
 
 # Задание 03
 class Cell:
