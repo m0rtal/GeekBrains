@@ -34,23 +34,44 @@
 # date = Date("32-11-2020")
 # print(date)
 #
+#
+# # Задание 02
+# class DivisionByZeroError(Exception):
+#     def __init__(self, txt):
+#         self.txt = txt
+#
+#
+# def division(divisible, divider):
+#     """Делит два числа и корректно обрабатывает деление на 0"""
+#     try:
+#         if divider == 0:
+#             raise DivisionByZeroError("Нельзя делить на ноль!")
+#     except DivisionByZeroError as err:
+#         print(err)
+#     else:
+#         print(divisible / divider)
+#
+#
+# division(3, 0)
+# division(10, 2)
+#
+#
+# # Задание 03
+# class NumbersOnly(Exception):
+#     def __init__(self, txt):
+#         self.txt = txt
+#
+#
+# stop_word = "stop"
+# my_list = []
+# while (inp := input("Введите число или stop для остановки цикла: ")) != stop_word:
+#     try:
+#         if not inp.isdigit():
+#             raise NumbersOnly("Допустимы только числа!")
+#         my_list.extend(inp)
+#     except NumbersOnly as err:
+#         print(err)
+#
+# print(f"Сформированный список: {my_list}")
 
-# Задание 02
-class DivisionByZeroError(Exception):
-    def __init__(self, txt):
-        self.txt = txt
-
-
-def division(divisible, divider):
-    """Делит два числа и корректно обрабатывает деление на 0"""
-    try:
-        if divider == 0:
-            raise DivisionByZeroError("Нельзя делить на ноль!")
-    except DivisionByZeroError as err:
-        print(err)
-    else:
-        print(divisible / divider)
-
-
-division(3, 0)
-division(10, 2)
+# Задание 04
