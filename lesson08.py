@@ -75,3 +75,36 @@
 # print(f"Сформированный список: {my_list}")
 
 # Задание 04
+class Warehouse:
+    pass
+
+
+class Equipment:
+    def __init__(self, brand, model, price):
+        self.brand = brand
+        self.model = model
+        self.price = price
+
+
+class Printer(Equipment):
+
+    def __init__(self, brand, model, price, color):
+        super().__init__(brand, model, price)
+        self.color = color
+
+
+class Scanner(Equipment):
+
+    def __init__(self, brand, model, price, format):
+        super().__init__(brand, model, price)
+        self.format = format
+
+
+class Xerox(Equipment):
+
+    def __init__(self, brand, model, price, paper_load):
+        super().__init__(brand, model, price)
+        self.paper_load = paper_load
+
+# Задание 05
+
