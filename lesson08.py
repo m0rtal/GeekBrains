@@ -76,14 +76,35 @@
 
 # Задание 04
 class Warehouse:
-    pass
+    def __init__(self):
+        self.main_storage = []
+        self.other_storage = []
+
+    def add_to_storage(self, obj):
+        self.main_storage.append(obj)
+
+    def transfer(self, obj, from_storage, to_storage):
+        print(f"Перемещаем {obj}...")
+        from_storage.remove(obj)
+        to_storage.append(obj)
+        print(f"{obj} перемещён!")
+
+    def __str__(self):
+        return f"Главный склад: {self.main_storage}, второстепенный склад: {self.other_storage}"
 
 
-class Equipment:
+from abc import ABC, abstractmethod
+
+
+class Equipment(ABC):
     def __init__(self, brand, model, price):
         self.brand = brand
         self.model = model
         self.price = price
+
+    @abstractmethod
+    def __str__(self):
+        pass
 
 
 class Printer(Equipment):
@@ -92,12 +113,18 @@ class Printer(Equipment):
         super().__init__(brand, model, price)
         self.color = color
 
+    def __str__(self):
+        return f"{self.brand} {self.model} {self.color}-цветный, {self.price} у.е."
+
 
 class Scanner(Equipment):
 
     def __init__(self, brand, model, price, format):
         super().__init__(brand, model, price)
         self.format = format
+
+    def __str__(self):
+        return f"{self.brand} {self.model} {self.format}, {self.price} у.е."
 
 
 class Xerox(Equipment):
@@ -106,5 +133,15 @@ class Xerox(Equipment):
         super().__init__(brand, model, price)
         self.paper_load = paper_load
 
+    def __str__(self):
+        return f"{self.brand} {self.model} {self.paper_load}, {self.price} у.е."
+
+
 # Задание 05
 
+warehouse = Warehouse()
+printer = Printer("Canon", "Pixma", "100", 3)
+warehouse.add_to_storage(printer)
+print(warehouse)
+warehouse.transfer(printer, warehouse.main_storage, warehouse.other_storage)
+print(warehouse)
