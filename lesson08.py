@@ -77,16 +77,23 @@
 # Задание 04
 class Warehouse:
     def __init__(self):
-        self.main_storage = []
-        self.other_storage = []
+        self.main_storage = {}
+        self.other_storage = {}
 
-    def add_to_storage(self, obj):
-        self.main_storage.append(obj)
+    def add_to_storage(self, obj, num, storage):
+        if storage.get(obj):
+            storage[obj] += num
+        else:
+            storage[obj] = num
 
-    def transfer(self, obj, from_storage, to_storage):
+    def transfer(self, obj, num, from_storage, to_storage):
         print(f"Перемещаем {obj}...")
-        from_storage.remove(obj)
-        to_storage.append(obj)
+        if to_storage.get(obj):
+            to_storage[obj] += num
+        else:
+            to_storage[obj] = num
+        from_storage[obj] -= num
+
         print(f"{obj} перемещён!")
 
     def __str__(self):
@@ -106,6 +113,10 @@ class Equipment(ABC):
     def __str__(self):
         pass
 
+    @abstractmethod
+    def __repr__(self):
+        pass
+
 
 class Printer(Equipment):
 
@@ -114,6 +125,9 @@ class Printer(Equipment):
         self.color = color
 
     def __str__(self):
+        return f"{self.brand} {self.model} {self.color}-цветный, {self.price} у.е."
+
+    def __repr__(self):
         return f"{self.brand} {self.model} {self.color}-цветный, {self.price} у.е."
 
 
@@ -126,6 +140,9 @@ class Scanner(Equipment):
     def __str__(self):
         return f"{self.brand} {self.model} {self.format}, {self.price} у.е."
 
+    def __repr__(self):
+        return f"{self.brand} {self.model} {self.format}, {self.price} у.е."
+
 
 class Xerox(Equipment):
 
@@ -136,12 +153,18 @@ class Xerox(Equipment):
     def __str__(self):
         return f"{self.brand} {self.model} {self.paper_load}, {self.price} у.е."
 
+    def __repr__(self):
+        return f"{self.brand} {self.model} {self.paper_load}, {self.price} у.е."
+
 
 # Задание 05
 
 warehouse = Warehouse()
 printer = Printer("Canon", "Pixma", "100", 3)
-warehouse.add_to_storage(printer)
+warehouse.add_to_storage(printer, 10, warehouse.main_storage)
 print(warehouse)
-warehouse.transfer(printer, warehouse.main_storage, warehouse.other_storage)
+warehouse.transfer(printer, 5, warehouse.main_storage, warehouse.other_storage)
 print(warehouse)
+
+# Задание 06
+
