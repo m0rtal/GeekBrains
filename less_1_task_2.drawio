@@ -1,1 +1,67 @@
-<mxfile host="app.diagrams.net" modified="2020-12-08T08:57:29.897Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.185 YaBrowser/20.11.2.78 Yowser/2.5 Safari/537.36" version="13.10.9" etag="mx3YpuURFsjoJxeyU6zB" type="github"><diagram id="HlQtPTnsTxsTSadsQf7s">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2020-12-08T09:13:13.386Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.185 YaBrowser/20.11.2.78 Yowser/2.5 Safari/537.36" etag="iV7IgU9xcRGKpQWdpEbB" version="13.10.9" type="github">
+  <diagram id="HlQtPTnsTxsTSadsQf7s" name="Page-1">
+    <mxGraphModel dx="2076" dy="1104" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="RQO24101OWLWG3-oZEEe-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="RQO24101OWLWG3-oZEEe-1" target="RQO24101OWLWG3-oZEEe-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RQO24101OWLWG3-oZEEe-1" value="Начало" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="354" y="30" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RQO24101OWLWG3-oZEEe-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="RQO24101OWLWG3-oZEEe-2" target="RQO24101OWLWG3-oZEEe-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RQO24101OWLWG3-oZEEe-2" value="ввод&lt;br&gt;x1, y1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="354" y="190" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RQO24101OWLWG3-oZEEe-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="RQO24101OWLWG3-oZEEe-4" target="RQO24101OWLWG3-oZEEe-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RQO24101OWLWG3-oZEEe-4" value="вывод&lt;br&gt;введите координаты первой точки" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="341" y="100" width="146" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RQO24101OWLWG3-oZEEe-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="RQO24101OWLWG3-oZEEe-17" target="RQO24101OWLWG3-oZEEe-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RQO24101OWLWG3-oZEEe-17" value="ввод&lt;br&gt;x2, y2" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="354" y="380" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RQO24101OWLWG3-oZEEe-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="RQO24101OWLWG3-oZEEe-19" target="RQO24101OWLWG3-oZEEe-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RQO24101OWLWG3-oZEEe-19" value="вывод&lt;br&gt;введите координаты второй точки" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="341" y="280" width="146" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RQO24101OWLWG3-oZEEe-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="RQO24101OWLWG3-oZEEe-22" target="RQO24101OWLWG3-oZEEe-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RQO24101OWLWG3-oZEEe-22" value="k = (y1 - y2) / (x1 - x2)" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="369" y="480" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="RQO24101OWLWG3-oZEEe-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="RQO24101OWLWG3-oZEEe-24" target="RQO24101OWLWG3-oZEEe-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RQO24101OWLWG3-oZEEe-24" value="b = y2 - k * x2" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="374" y="620" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="RQO24101OWLWG3-oZEEe-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="RQO24101OWLWG3-oZEEe-26" target="RQO24101OWLWG3-oZEEe-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RQO24101OWLWG3-oZEEe-26" value="вывод&lt;br&gt;уравнение прямой" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="347" y="740" width="134" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RQO24101OWLWG3-oZEEe-28" value="Конец" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="354" y="950" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RQO24101OWLWG3-oZEEe-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="RQO24101OWLWG3-oZEEe-29" target="RQO24101OWLWG3-oZEEe-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RQO24101OWLWG3-oZEEe-29" value="y = k*x + b" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="354" y="840" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
