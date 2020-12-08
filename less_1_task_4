@@ -1,1 +1,67 @@
-<mxfile host="app.diagrams.net" modified="2020-12-08T16:34:24.340Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.185 YaBrowser/20.11.2.78 Yowser/2.5 Safari/537.36" version="13.10.9" etag="eJXiDqUD2tFVnK-7wWe7" type="github"><diagram id="s_PchYjeOcmOTdc8e-Zt">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2020-12-08T17:58:02.593Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.185 YaBrowser/20.11.2.78 Yowser/2.5 Safari/537.36" etag="RESjGE0zSoR2WEh0K4y2" version="13.11.0" type="github">
+  <diagram id="s_PchYjeOcmOTdc8e-Zt" name="Page-1">
+    <mxGraphModel dx="1564" dy="906" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="8as0MQ7LHRgMGUqAAyAX-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8as0MQ7LHRgMGUqAAyAX-1" target="8as0MQ7LHRgMGUqAAyAX-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8as0MQ7LHRgMGUqAAyAX-1" value="начало" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8as0MQ7LHRgMGUqAAyAX-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8as0MQ7LHRgMGUqAAyAX-2" target="8as0MQ7LHRgMGUqAAyAX-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8as0MQ7LHRgMGUqAAyAX-2" value="вывод&lt;br&gt;введите две буквы" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="30" width="156" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8as0MQ7LHRgMGUqAAyAX-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8as0MQ7LHRgMGUqAAyAX-3" target="8as0MQ7LHRgMGUqAAyAX-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8as0MQ7LHRgMGUqAAyAX-3" value="ввод&lt;br&gt;first, second" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="30" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8as0MQ7LHRgMGUqAAyAX-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8as0MQ7LHRgMGUqAAyAX-4" target="8as0MQ7LHRgMGUqAAyAX-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8as0MQ7LHRgMGUqAAyAX-4" value="определить переменную start как порядковый номер буквы &quot;а&quot;-1" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="630" y="20" width="134" height="134" as="geometry" />
+        </mxCell>
+        <mxCell id="8as0MQ7LHRgMGUqAAyAX-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8as0MQ7LHRgMGUqAAyAX-8" target="8as0MQ7LHRgMGUqAAyAX-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8as0MQ7LHRgMGUqAAyAX-8" value="позиция буквы в алфавите = её порядковый номер минус start" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="638.5" y="190" width="117" height="117" as="geometry" />
+        </mxCell>
+        <mxCell id="8as0MQ7LHRgMGUqAAyAX-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8as0MQ7LHRgMGUqAAyAX-10" target="8as0MQ7LHRgMGUqAAyAX-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8as0MQ7LHRgMGUqAAyAX-10" value="позиция буквы в алфавите = её порядковый номер минус start" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="480" y="190" width="117" height="117" as="geometry" />
+        </mxCell>
+        <mxCell id="8as0MQ7LHRgMGUqAAyAX-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8as0MQ7LHRgMGUqAAyAX-13" target="8as0MQ7LHRgMGUqAAyAX-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8as0MQ7LHRgMGUqAAyAX-13" value="вывод&lt;br&gt;позиций букв в алфавите" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="294" y="218.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8as0MQ7LHRgMGUqAAyAX-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8as0MQ7LHRgMGUqAAyAX-15" target="8as0MQ7LHRgMGUqAAyAX-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8as0MQ7LHRgMGUqAAyAX-15" value="количество букв между введёнными = модулю разницы их положений в алфавите -1" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="120" y="188.5" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="8as0MQ7LHRgMGUqAAyAX-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8as0MQ7LHRgMGUqAAyAX-17" target="8as0MQ7LHRgMGUqAAyAX-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8as0MQ7LHRgMGUqAAyAX-17" value="вывод&lt;br&gt;количества букв между введёнными" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="97.5" y="380" width="165" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8as0MQ7LHRgMGUqAAyAX-19" value="конец" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="370" width="120" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
