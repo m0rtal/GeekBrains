@@ -1,1 +1,33 @@
-<mxfile host="app.diagrams.net" modified="2020-12-18T10:45:06.516Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 YaBrowser/20.11.3.183 Yowser/2.5 Safari/537.36" version="13.11.0" etag="0EEc0XazK_9BG3gXH3Lb" type="github"><diagram id="xNUZQCItFdk-rlId8AHR">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2020-12-18T11:15:50.671Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 YaBrowser/20.11.3.183 Yowser/2.5 Safari/537.36" etag="8nntueXkTo8ThJ6BOtce" version="13.11.0" type="github">
+  <diagram id="xNUZQCItFdk-rlId8AHR" name="Page-1">
+    <mxGraphModel dx="782" dy="453" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="dz4TqkV175J89MJsYAO3-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="dz4TqkV175J89MJsYAO3-1" target="dz4TqkV175J89MJsYAO3-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dz4TqkV175J89MJsYAO3-1" value="начало" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="354" y="40" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="dz4TqkV175J89MJsYAO3-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="dz4TqkV175J89MJsYAO3-2" target="dz4TqkV175J89MJsYAO3-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dz4TqkV175J89MJsYAO3-2" value="for i in range(2,10):" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="354" y="150" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="dz4TqkV175J89MJsYAO3-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="dz4TqkV175J89MJsYAO3-8" target="dz4TqkV175J89MJsYAO3-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dz4TqkV175J89MJsYAO3-8" value="вывод&lt;br&gt;f&quot;Кол-во чисел, кратных {i}:&quot;, len(list(filter(lambda x: x % i == 0, range(2, 100))))" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="282" y="270" width="264" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dz4TqkV175J89MJsYAO3-12" value="конец" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="354" y="370" width="120" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
