@@ -1,6 +1,5 @@
 # Задание 01
 from random import randint
-from my_functions import get_digit_from_user
 
 
 class Matrix:

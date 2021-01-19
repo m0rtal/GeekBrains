@@ -1,4 +1,4 @@
-from my_functions import get_digit_from_user
+from intro_to_python.my_functions import get_digit_from_user
 
 
 # Задание 01
