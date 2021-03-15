@@ -11,6 +11,8 @@ def euclidius(width: int, height: int) -> int:
         new_height = width % height
         new_width = height
         print(new_width, new_height)
+
         return euclidius(new_width, new_height)
+
 
 print(euclidius(1680, 640))
