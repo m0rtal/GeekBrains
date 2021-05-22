@@ -66,13 +66,13 @@ class Parse5ka:
             payload = {
                 "name": category_name,
                 "code": category,
-                "products": [data["id"], ]
+                "products": [data, ]
             }
             if not new_file_path.exists():
                 new_file_path.write_text(json.dumps(payload, ensure_ascii=False, indent=4))
             else:
                 existing_data = json.loads(new_file_path.read_text())
-                existing_data["products"].append(data["id"])
+                existing_data["products"].append(data)
                 new_file_path.write_text(json.dumps(existing_data, ensure_ascii=False, indent=4))
 
 
