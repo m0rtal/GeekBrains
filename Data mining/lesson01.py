@@ -23,73 +23,6 @@ Json файлы, для каждой категории товаров долж�
 """
 
 
-class Parse5ka:
-    def __init__(self, start_url: str, save_path: Path):
-        self.save_path = save_path
-        self.start_url = start_url
-        self.headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0"
-        }
-        self.special_offers = "special_offers/"
-        self.categories = "categories/"
-        self.params = {
-            "store": "363H",
-        }
-
-    def run(self):
-        for product in self._parse_response(self.start_url + self.special_offers):
-            file_path = self.save_path.joinpath(f"{product['id']}.json")
-            self._save(product, file_path)
-
-    def _parse_response(self, url):
-        while url:
-            response = self._get_response(url)
-            data: dict = response.json()
-            url = data["next"]
-            for item in data["results"]:
-                yield item
-
-    def _get_response(self, url):
-        while True:
-            response = requests.get(url, headers=self.headers, params=self.params)
-            if response.status_code == 200:
-                return response
-            time.sleep(random.randint(1, 3))
-
-    def _save(self, data: dict, file_path: Path):
-        if self.__class__.__name__ == "Parse5ka":
-            file_path.write_text(json.dumps(data, ensure_ascii=False, indent=4))
-        if self.__class__.__name__ == "ParseCategories":
-            category = self.params["categories"]
-            category_name = self.params["category_name"]
-            new_file_path = file_path.parent.joinpath(f"{category}.json")
-            payload = {
-                "name": category_name,
-                "code": category,
-                "products": [data, ]
-            }
-            if not new_file_path.exists():
-                new_file_path.write_text(json.dumps(payload, ensure_ascii=False, indent=4))
-            else:
-                existing_data = json.loads(new_file_path.read_text())
-                existing_data["products"].append(data)
-                new_file_path.write_text(json.dumps(existing_data, ensure_ascii=False, indent=4))
-
-
-class ParseCategories(Parse5ka):
-    def run(self):
-        for category_code, category_name in self._parse_categories(self.start_url + self.categories):
-            self.params["categories"] = category_code
-            self.params["category_name"] = category_name
-            super().run()
-
-    def _parse_categories(self, url):
-        response = self._get_response(url)
-        data: dict = response.json()
-        for item in data:
-            yield item["parent_group_code"], item["parent_group_name"]
-
-
 def get_save_path(dir_name: str) -> Path:
     save_path = Path(__file__).parent.joinpath(dir_name)
     if not save_path.exists():
@@ -97,8 +30,63 @@ def get_save_path(dir_name: str) -> Path:
     return save_path
 
 
-if __name__ == "__main__":
-    product_path = get_save_path("categories")
+class Parse5ka:
+    def __init__(self):
+        self.headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0"
+        }
+        self.params = {
+            "store": "363H",
+        }
 
-    parser = ParseCategories("https://5ka.ru/api/v2/", product_path)
-    parser.run()
+    def get_response(self, url, category=None):
+        if category:
+            self.params["categories"] = category
+        while True:
+            response = requests.get(url, headers=self.headers, params=self.params)
+            if response.status_code == 200:
+                return response
+            time.sleep(random.randint(1, 3))
+
+    def parse_response(self, url, category):
+        while url:
+            response = self.get_response(url, category)
+            data: dict = response.json()
+            url = data["next"]
+            for item in data["results"]:
+                yield item
+
+    def run(self, url: str, categories: list, save_path: Path):
+        for category in categories:
+            for item in self.parse_response(url, category["parent_group_code"]):
+                file_path = save_path.joinpath(f"{item['id']}.json")
+                self._save(item, category, file_path)
+
+    @staticmethod
+    def _save(data: dict, category: dict, file_path: Path):
+        cat_num = category["parent_group_code"]
+        cat_name = category["parent_group_name"]
+        new_file_path = file_path.parent.joinpath(f"{cat_num}.json")
+        payload = {
+            "name": cat_name,
+            "code": cat_num,
+            "products": [data, ]
+        }
+        if not new_file_path.exists():
+            new_file_path.write_text(json.dumps(payload, ensure_ascii=False, indent=4))
+        else:
+            existing_data = json.loads(new_file_path.read_text())
+            existing_data["products"].append(data)
+            new_file_path.write_text(json.dumps(existing_data, ensure_ascii=False, indent=4))
+
+
+special_offers = "special_offers/"
+categories = "categories/"
+url = "https://5ka.ru/api/v2/"
+
+save_path = get_save_path("test")
+
+if __name__ == "__main__":
+    parser = Parse5ka()
+    categories = parser.get_response(url + categories).json()
+    parser.run(url+special_offers, categories, save_path)
