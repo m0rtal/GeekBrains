@@ -93,7 +93,7 @@ plt.close()
 """ Задание 5 """
 
 # 1) Нарисуйте трехмерный график двух параллельных плоскостей.
-from pylab import *
+from pylab import figure, show, close
 from mpl_toolkits.mplot3d import Axes3D
 
 fig = figure()
@@ -106,6 +106,7 @@ Z2 = 2 * X + 3 * Y + 50
 ax.plot_surface(X, Y, Z1)
 ax.plot_surface(X, Y, Z2)
 show()
+close()
 
 # 2) Нарисуйте трехмерный график двух любых поверхностей второго порядка.
 fig = figure()
