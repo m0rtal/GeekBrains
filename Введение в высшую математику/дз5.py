@@ -7,32 +7,32 @@ from random import randint
 import matplotlib.pyplot as plt
 import numpy as np
 
-#
-# def spin_roulette() -> int:
-#     return np.random.randint(0, 37)
-#
-#
-# # Задание 2.1
-# # Напишите код, проверяющий любую из теорем сложения или умножения вероятности на примере рулетки или подбрасывания
-# # монетки.
-#
-# rolls = 10 ** 6
-# full_group = (spin_roulette() for _ in range(rolls))
-# cnt = Counter(full_group)
-# frequences = [value / rolls for key, value in cnt.items()]
-# expected_freq = 1 / 37 + 1 / 37
-# actual_freq = frequences[0] + frequences[1]
-# print(f"Ожидаемая вероятность выпадения или A или B: {expected_freq:.04f}, фактическая вероятность: {actual_freq:.04f}")
-#
-# # Задание 2.2
-# # Сгенерируйте десять выборок случайных чисел х0, …, х9.
-# # и постройте гистограмму распределения случайной суммы +х1+ …+ х9.
-#
-# samples = ((randint(0, 10) for _ in range(10)) for _ in range(10))
-# sums = [sum(sample) for sample in samples]
-# plt.hist(sums, bins=10)
-# plt.show()
-# plt.close()
+
+def spin_roulette() -> int:
+    return np.random.randint(0, 37)
+
+
+# Задание 2.1
+# Напишите код, проверяющий любую из теорем сложения или умножения вероятности на примере рулетки или подбрасывания
+# монетки.
+
+rolls = 10 ** 6
+full_group = (spin_roulette() for _ in range(rolls))
+cnt = Counter(full_group)
+frequences = [value / rolls for key, value in cnt.items()]
+expected_freq = 1 / 37 + 1 / 37
+actual_freq = frequences[0] + frequences[1]
+print(f"Ожидаемая вероятность выпадения или A или B: {expected_freq:.04f}, фактическая вероятность: {actual_freq:.04f}")
+
+# Задание 2.2
+# Сгенерируйте десять выборок случайных чисел х0, …, х9.
+# и постройте гистограмму распределения случайной суммы +х1+ …+ х9.
+
+samples = ((randint(0, 10) for _ in range(10)) for _ in range(10))
+sums = [sum(sample) for sample in samples]
+plt.hist(sums, bins=10)
+plt.show()
+plt.close()
 
 # Задание 3.1
 # Дополните код Монте-Карло последовательности независимых испытаний расчетом соответствующих вероятностей (через
