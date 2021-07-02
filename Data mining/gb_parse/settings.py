@@ -7,7 +7,7 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'gb_parse_18_05'
+BOT_NAME = 'gb_parse'
 
 LOG_ENABLE = True
 LOG_LEVEL = "DEBUG"
@@ -56,6 +56,7 @@ DEFAULT_REQUEST_HEADERS = {
 # DOWNLOADER_MIDDLEWARES = {
 #     'rotating_proxies.middlewares.RotatingProxyMiddleware': 610,
 #     'rotating_proxies.middlewares.BanDetectionMiddleware': 620,
+#     'gb_parse.middlewares.GbParseDownloaderMiddleware': 543,
 # }
 
 # Enable or disable extensions
@@ -78,6 +79,7 @@ AUTOTHROTTLE_ENABLED = True
 AUTOTHROTTLE_START_DELAY = 3
 # The maximum download delay to be set in case of high latencies
 AUTOTHROTTLE_MAX_DELAY = 15
+
 # The average number of requests Scrapy should be sending in parallel to
 # each remote server
 # AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0
@@ -91,6 +93,5 @@ AUTOTHROTTLE_DEBUG = True
 # HTTPCACHE_DIR = 'httpcache'
 # HTTPCACHE_IGNORE_HTTP_CODES = []
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
-
 IMAGES_STORE = "images"
 # ROTATING_PROXY_LIST_PATH = "proxies.txt"

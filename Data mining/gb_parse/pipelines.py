@@ -39,4 +39,8 @@ class GbImageDownloadPipeline(ImagesPipeline):
     def item_completed(self, results, item, info):
         if results:
             item['photos'] = [itm[1] for itm in results]
+
+
+class GbParsePipeline:
+    def process_item(self, item, spider):
         return item
